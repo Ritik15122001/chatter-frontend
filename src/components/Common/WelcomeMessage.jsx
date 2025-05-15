@@ -1,4 +1,3 @@
-// components/WelcomeMessage.jsx
 import React from 'react';
 import "../../App.css";
 
