@@ -1,0 +1,526 @@
+#root {
+  height: 100%;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* App.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.chat-app {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5f5f5;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 300px;
+  background-color: #fff;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sidebar-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  background-color: #5b7bc0;
+  color: white;
+  position: relative;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 14px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  width: 18px;
+  height: 2px;
+  background-color: white;
+  display: block;
+}
+
+.user-name {
+  color: #333;
+  flex-grow: 1;
+  font-weight: bold;
+}
+
+.status-icon {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5b7bc0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contacts-list {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.contact-item:hover {
+  background-color: #f9f9f9;
+}
+
+.contact-item.active {
+  background-color: #f0f0f0;
+}
+
+.contact-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e1e1e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+.contact-info {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.contact-name {
+  color: rgba(0, 0, 0, 0.589);
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.contact-last-message {
+  font-size: 0.85rem;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact-time {
+  font-size: 0.75rem;
+  color: #999;
+  min-width: 55px;
+  text-align: right;
+}
+
+/* Chat Area Styles */
+.chat-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #e5e5e5;
+}
+
+.chat-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.chat-recipient {
+  color: rgba(0, 0, 0, 0.641);
+  flex-grow: 1;
+  font-weight: bold;
+}
+
+.chat-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.action-icon {
+  cursor: pointer;
+  font-size: 18px;
+  color: #777;
+}
+
+.messages-container {
+  flex-grow: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-group {
+  margin-bottom: 8px;
+}
+
+.message-date {
+  text-align: center;
+  margin: 16px 0;
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.message.sent {
+  justify-content: flex-end;
+}
+
+.message.received {
+  justify-content: flex-start;
+}
+
+.message-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #e1e1e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.message-bubble {
+  padding: 8px 12px;
+  border-radius: 18px;
+  max-width: 65%;
+  word-wrap: break-word;
+}
+
+.message.sent .message-bubble {
+  background-color: #5b7bc0;
+  color: white;
+  border-top-right-radius: 4px;
+}
+
+.message.received .message-bubble {
+  background-color: white;
+  color: #333;
+  border-top-left-radius: 4px;
+}
+
+.typing {
+  font-style: italic;
+  color: #888;
+}
+
+.message-input {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  background-color: white;
+  border-top: 1px solid #e0e0e0;
+}
+
+.emoji-picker,
+.attachment-icon {
+  padding: 0 12px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+}
+
+.message-input input {
+  flex-grow: 1;
+  height: 70px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 0 18px;
+  background: aliceblue;
+  color: #333;
+}
+
+.no-chat-selected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #888;
+  font-size: 16px;
+}
+
+/* Add these styles to your App.css file */
+
+/* Authentication Modals */
+.auth-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.auth-modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.auth-modal h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.user-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.user-option {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.user-option:hover {
+  background-color: #f0f2f5;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e4e6eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.user-name {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.verification-input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 3px;
+  background-color: aliceblue;
+  color: #333;
+}
+
+.verification-hint {
+  color: #777;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.auth-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.auth-buttons button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.auth-buttons button:first-child {
+  background-color: #e4e6eb;
+  color: #333;
+}
+
+.auth-buttons button:last-child {
+  background-color: #0084ff;
+  color: white;
+}
+
+/* Add these additional styles to your App.css file */
+
+/* Welcome Message */
+.welcome-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+.welcome-content {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.welcome-content h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.welcome-content p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Logout Button */
+.logout-button {
+  margin-left: 2%;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.logout-icon {
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* Adjust sidebar header to accommodate logout button */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
